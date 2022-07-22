@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+	.test {
+		display: flex;
+	}
+</style>
+<body>
+    <body>
+        <div><a href="/recipes">Back to recipes</a></div>
+		<div><a href="/log_out">Logout</a></div>
+		<div class="box2">
+			<h1>Add New Recipes</h1>
+			<form action="/recipe/create" method="post">
+				<div>
+					<label for="name">Recipe Name</label>
+					<input type="text" name="name" id="" />{% for message in get_flashed_messages(category_filter = ['r_name'])%} 
+					{{message}}{% endfor%}
+								</div>
+
+                <div class="test" >
+					<label for="description">Description</label>
+                    <textarea name="description" id="" cols="30" rows="10"></textarea>{% for message in
+                        get_flashed_messages(category_filter = ['r_description']) :%}
+                        {{message}} {%endfor%}
+                </div>
+
+				<div class="test" >
+					<label for="instruction">instruction</label>
+					<textarea type="text" name="instruction" id="" cols="30" rows="10" ></textarea>{% for message in
+                        get_flashed_messages(category_filter = ['r_instruction']) :%}
+                        {{message}} {%endfor%}
+				</div>
+
+				<div>
+					<label for="cooked_date"> Date Cooked </label>
+					<input type="date" name="cooked_date" id="" />{% for message in
+                        get_flashed_messages(category_filter = ['r_cooked_date']) :%}
+                        {{message}} {%endfor%}
+				</div>
+
+				<div>
+					<label for="under_30">Under 30 minutes</label>
+
+					yes:<input type="radio" name="under_30" id="" value="1" checked/>
+					no:<input type="radio" name="under_30" id="" value="0"/>
+				</div>
+
+				<button type="submit">post recipe</button>
+			</form>
+		</div>
+</body>
+</html>

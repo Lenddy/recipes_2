@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>welcome, {{session["f_name"]}}</h1>
+    <p>posted by: {{current_recipe.user.f_name}}</p>
+    <h2>recipe name: {{current_recipe.name}}</h2>
+    <div>
+        <div>
+        <p>
+        description: {{current_recipe.description}}
+        </p>
+        </div>
+        <div>
+        <p>
+            under 30?: {% if current_recipe.under_30 == 1 :%} yes {% else: %} no {% endif
+                %}
+        </p>
+        </div>
+        <div>
+        <p>
+            instructions: {{current_recipe.instruction}}
+        </p>
+        </div>
+        <div>
+            cooked data: {{current_recipe.cooked_date}}
+        </div>
+
+
+
+    </div>
+
+
+    <div><a href="/recipes/new">Create</a></div>
+    <div><a href="/recipes">Back to recipes</a></div>
+    <div><a href="/log_out">Logout</a></div>
+</body>
+</html>
+
+</body>
+</html>

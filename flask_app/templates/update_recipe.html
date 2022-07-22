@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		.test {
+			display: flex;
+		}
+	</style>
+
+	<body>
+		<div><a href="/recipes">Back to recipes</a></div>
+		<div><a href="/log_out">Logout</a></div>
+		<div class="box2">
+			<h1>edit Recipes</h1>
+			<form action="/recipe/update/{{current_recipe.id}}" method="post">
+				<div>
+					<label for="name">Recipe Name</label>
+					<input
+						type="text"
+						name="name"
+						id=""
+						placeholder="{{current_recipe.name}}"
+						value="{{current_recipe.name}}"
+					/>{% for message in get_flashed_messages(category_filter =
+					['r_name'])%} {{message}}{% endfor%}
+				</div>
+
+				<div class="test">
+					<label for="description">Description</label>
+					<textarea name="description" id="" cols="30" rows="3">
+{{current_recipe.description}}</textarea
+					>{% for message in get_flashed_messages(category_filter =
+					['r_description']) :%} {{message}} {%endfor%}
+				</div>
+
+				<div class="test">
+					<label for="instruction">instruction</label>
+					<textarea
+						type="text"
+						name="instruction"
+						id=""
+						cols="30"
+						rows="3"
+					>
+{{current_recipe.instruction}}</textarea
+					>{% for message in get_flashed_messages(category_filter =
+					['r_instruction']) :%} {{message}} {%endfor%}
+				</div>
+
+				<div>
+					<label for="cooked_date"> Date Cooked </label>
+					<input
+						type="date"
+						name="cooked_date"
+						id=""
+						placeholder="{{current_recipe.cooked_date}}"
+						value="{{current_recipe.cooked_date}}"
+					/>{% for message in get_flashed_messages(category_filter =
+					['r_cooked_date']) :%} {{message}} {%endfor%}
+				</div>
+
+				<div>
+					<label for="under_30">Under 30 minutes</label>
+					yes:<input type="radio" name="under_30" id="" value="1" {%
+					if current_recipe.under_30 == 1 %} checked {% endif%} />
+					no:<input type="radio" name="under_30" id="" value="0" {% if
+					current_recipe.under_30 == 0 %} checked {% endif%}/>
+				</div>
+
+				<button type="submit">update recipe</button>
+			</form>
+		</div>
+	</body>
+</html>
