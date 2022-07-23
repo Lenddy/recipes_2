@@ -7,7 +7,7 @@ from flask_bcrypt import Bcrypt
 #to get it to work you need to import Bcrypt
 bcrypt = Bcrypt(app)
 
-#TODO go back to you database and drop the schema and add date instead of date_time  on cooke_date
+
 # registration page
 @app.route("/")
 def show_reg():
