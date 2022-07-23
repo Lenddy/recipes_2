@@ -6,7 +6,7 @@ import re
 email_regex = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 password_regex =re.compile(r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$')
 
-#TODO go back to you database and drop the schema and add date instead of date_time  on cooke_date
+
 
 
 class User:

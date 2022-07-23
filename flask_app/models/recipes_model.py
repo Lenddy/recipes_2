@@ -4,7 +4,7 @@ from flask import flash
 from flask_app import db 
 from flask_app.models.user_model import User
 
-#TODO go back to you database and drop the schema and add date instead of date_time  on cooke_date
+
 class Recipes:
     def __init__(self,data):
         self.id = data["id"]

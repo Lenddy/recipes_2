@@ -3,9 +3,7 @@ from flask_app import app
 from flask_app.models.user_model import User
 from flask_app.models.recipes_model import Recipes
 
-#TODO go back to you database and drop the schema and add date instead of date_time  on cooke_date
 #always use the decorator
-
 @app.route("/recipes")
 def create_recipes():
     if "id" not in session:
